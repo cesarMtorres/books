@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BookStore</title>
+	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body>
+	<section class="my-10">
+	<h1 class="text-center text-4xl">Django Books App</h1>
+
+	<div class="grid grid-cols-4 gap-4 mt-10">
+	
+	{% for book in books %}
+
+	<a href="{% url 'book.show' book.id %}" class="justify-self-center text-center my-4" target="_blank">
+	
+	<div class="justify-self-center">
+		
+		<img src="{{ book.thumbnailUrl }}" alt="" width="200"/>
+		
+		<p class="text-lg text-gray-700">{{ book.title }}</p>
+
+	</div>
+	
+	</a>
+
+
+	{% endfor %}
+	
+	</div>
+
+
+
+	</section>
+</body>
+</html>
